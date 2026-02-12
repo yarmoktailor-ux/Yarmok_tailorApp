@@ -9,38 +9,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="praise-container" class="fixed top-20 left-0 right-0 z-[100] text-center no-print px-4"></div>
+<body class="bg-black text-white text-right">
 
-    <nav class="sticky top-0 z-50 glass p-4 flex justify-between items-center no-print">
-        <div class="flex gap-6">
-            <button onclick="showPage('home')" class="hover:text-gold-500 font-bold">الرئيسية</button>
-            <button onclick="showPage('tailor')" class="hover:text-gold-500 font-bold">التفصيل الذكي</button>
-            <button onclick="showPage('about')" class="hover:text-gold-500 font-bold">إرث الوالد</button>
+    <nav class="p-4 border-b border-yellow-600 flex justify-between items-center">
+        <div class="text-yellow-500 font-bold text-xl">اليرموك 2002</div>
+        <div class="space-x-4 space-x-reverse">
+            <button onclick="alert('مرحباً بك في قسم التفصيل')" class="hover:text-yellow-500">التفصيل</button>
+            <button onclick="alert('مرحباً بك في إرث الوالد')" class="hover:text-yellow-500">إرث الوالد</button>
         </div>
-        <div class="gold-text font-bold text-xl">اليرموك 2002</div>
     </nav>
 
-    <section id="home" class="page py-10 px-6 max-w-6xl mx-auto text-center">
-        <div id="logo-header" class="mb-10">
-            <img id="store-logo" src="https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png" class="h-32 w-32 mx-auto rounded-full border-2 border-gold-500 shadow-2xl mb-4">
-            <h1 class="text-3xl font-bold gold-text">مؤسسة اليرموك للخياطة الرجالية</h1>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="product-list"></div>
-    </section>
-
-    <section id="about" class="page hidden py-20 px-6 max-w-4xl mx-auto text-center">
-        <div class="glass p-10 rounded-3xl border-2 border-gold-500 shadow-2xl">
-            <h2 class="text-4xl font-bold gold-text mb-6">إرث الوالد يرحب بكم</h2>
-            <p class="text-xl italic">"الثوب هيبة الرجل، فاجعلوا هيبته في دقة عملكم"</p>
-        </div>
-    </section>
-
-    <section id="tailor" class="page hidden py-10 px-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold gold-text mb-6 text-center">نظام التفصيل الذكي</h2>
-        <div id="thobes-container"></div>
-        <button onclick="addNewThobe()" class="btn-gold px-4 py-2 mt-4">+ إضافة ثوب</button>
-    </section>
+    <header class="py-20 text-center">
+        <h1 class="text-4xl font-bold text-yellow-500 mb-4">مؤسسة اليرموك للخياطة الرجالية</h1>
+        <p class="text-gray-400 italic">"إرث الوالد لخدمتكم بأرقى الأقمشة"</p>
+        <button class="mt-8 bg-yellow-600 text-black px-8 py-3 rounded-full font-bold hover:bg-yellow-500 transition">ابدأ التفصيل الآن</button>
+    </header>
 
     <script src="script.js"></script>
 </body>
