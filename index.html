@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div id="praise-container" class="fixed top-20 left-0 right-0 z-[100] text-center no-print px-4"></div>
 
     <nav class="sticky top-0 z-50 glass p-4 flex justify-between items-center no-print">
@@ -28,14 +27,20 @@
             <h1 class="text-3xl font-bold gold-text">مؤسسة اليرموك للخياطة الرجالية</h1>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="product-list"></div>
-        <div id="yaqoot-rec" class="hidden mt-12 p-6 glass rounded-2xl border-dashed border border-gold-500/50">
-            <h3 class="gold-text font-bold mb-2"><i class="fas fa-magic ml-2"></i> اقتراح ياقوت اليرموك:</h3>
-            <p id="rec-text" class="italic opacity-90"></p>
+    </section>
+
+    <section id="about" class="page hidden py-20 px-6 max-w-4xl mx-auto text-center">
+        <div class="glass p-10 rounded-3xl border-2 border-gold-500 shadow-2xl">
+            <h2 class="text-4xl font-bold gold-text mb-6">إرث الوالد يرحب بكم</h2>
+            <p class="text-xl italic">"الثوب هيبة الرجل، فاجعلوا هيبته في دقة عملكم"</p>
         </div>
     </section>
 
-    <div id="print-area" class="hidden p-10 bg-white text-black min-h-screen">
-        </div>
+    <section id="tailor" class="page hidden py-10 px-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold gold-text mb-6 text-center">نظام التفصيل الذكي</h2>
+        <div id="thobes-container"></div>
+        <button onclick="addNewThobe()" class="btn-gold px-4 py-2 mt-4">+ إضافة ثوب</button>
+    </section>
 
     <script src="script.js"></script>
 </body>
