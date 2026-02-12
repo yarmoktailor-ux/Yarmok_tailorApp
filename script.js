@@ -1,6 +1,6 @@
 let thobeCount = 0;
 let products = [
-    { id: 101, name: "قماش سميراميس ياباني", price: 450, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "fabric" },
+    { id: 101, name: "قماش ياباني", price: 450, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "fabric" },
     { id: 102, name: "ثوب ملكي مطرز", price: 300, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "thobe" }
 ];
 
