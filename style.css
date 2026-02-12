@@ -6,6 +6,7 @@
     --navy: #011627; 
 }
 
+
 body { 
     font-family: 'Cairo', sans-serif; 
     background-color: var(--dark); 
