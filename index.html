@@ -1,48 +1,1296 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خياط اليرموك - إرث 2002</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        :root { --gold: #d4af37; --dark: #0a0a0a; }
-        body { background-color: var(--dark); font-family: 'Cairo', sans-serif; color: white; }
-        .gold-border { border: 1px solid var(--gold); }
-        .text-gold { color: var(--gold); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>خياط اليرموك | تفصيل فاخر منذ 2002</title>
+  <meta name="description" content="خياط اليرموك - أناقة ملكية وحرفية عريقة في تفصيل الملابس الرجالية والنسائية منذ عام 2002" />
+
+  <!-- الخطوط -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ===== المتغيرات والألوان ===== */
+    :root {
+      --bg: #0a0a0a;
+      --bg-card: #121212;
+      --bg-secondary: #1f1f1f;
+      --gold: #c8952c;
+      --gold-light: #d4a94a;
+      --gold-dim: rgba(200, 149, 44, 0.15);
+      --gold-border: rgba(200, 149, 44, 0.25);
+      --text: #e0d5c4;
+      --text-muted: #8a7e6e;
+      --border: #2a2318;
+      --radius: 2px;
+    }
+
+    /* ===== الأساسيات ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif {
+      font-family: 'Amiri', Georgia, serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===== الحاوي ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== شريط التنقل ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 50;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-border);
+      background: var(--gold-dim);
+      border-radius: var(--radius);
+    }
+
+    .logo-icon svg {
+      color: var(--gold);
+    }
+
+    .logo-text h1 {
+      font-family: 'Amiri', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+    }
+
+    .logo-text p {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--gold-border);
+      background: transparent;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      background: var(--gold-dim);
+    }
+
+    .btn-large {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .btn-large:hover {
+      opacity: 0.9;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-cta {
+      display: inline-block;
+    }
+
+    /* ===== القسم الرئيسي Hero ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--bg) 0%, rgba(10,10,10,0.4) 50%, transparent 100%),
+                  linear-gradient(to left, transparent, rgba(10,10,10,0.8));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 96px 0;
+    }
+
+    .hero-tag {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-tag .line {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-tag span {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .hero h2 {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      text-wrap: balance;
+    }
+
+    .hero h2 .highlight {
+      color: var(--gold);
+    }
+
+    .hero-desc {
+      margin-top: 24px;
+      max-width: 560px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-stats .stat-num {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .hero-stats .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ===== العناوين المشتركة ===== */
+    .section {
+      position: relative;
+      padding: 96px 0;
+    }
+
+    .section-divider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(200,149,44,0.2), transparent);
+    }
+
+    .section-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-tag .line {
+      width: 48px;
+      height: 1px;
+      background: rgba(200,149,44,0.4);
+    }
+
+    .section-tag span {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    .section-title .highlight {
+      color: var(--gold);
+    }
+
+    .section-desc {
+      max-width: 640px;
+      margin: 16px auto 0;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* ===== قسم التاريخ ===== */
+    .history-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .history-image {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--bg-card);
+    }
+
+    .history-image .overlay-card {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      left: 24px;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .history-image .overlay-card .year {
+      font-family: 'Amiri', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .history-image .overlay-card .label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .timeline {
+      position: relative;
+      padding-right: 48px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 24px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 4px;
+      right: -36px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,149,44,0.5);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline-dot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .timeline-year {
+      font-family: 'Amiri', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .timeline-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ===== قسم الخدمات ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      border-color: var(--gold-border);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-border);
+      background: var(--gold-dim);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+    }
+
+    .service-icon svg {
+      color: var(--gold);
+      width: 24px;
+      height: 24px;
+    }
+
+    .service-card h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ===== قسم الأقمشة ===== */
+    .fabrics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .fabric-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .fabric-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(42,35,24,0.5);
+    }
+
+    .fabric-item .name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .fabric-item .count {
+      font-family: 'Amiri', serif;
+      font-size: 0.875rem;
+      color: var(--gold);
+    }
+
+    .fabrics-image {
+      position: relative;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--bg-card);
+    }
+
+    /* ===== قسم الحجز ===== */
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 0;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--gold-border);
+      background: var(--gold-dim);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      color: var(--gold);
+      width: 16px;
+      height: 16px;
+    }
+
+    .contact-item .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item .value {
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .booking-form {
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .form-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .form-header svg {
+      color: var(--gold);
+      width: 20px;
+      height: 20px;
+    }
+
+    .form-header h3 {
+      font-family: 'Amiri', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      font-size: 0.875rem;
+      color: var(--text);
+      font-family: 'Cairo', sans-serif;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-family: 'Cairo', sans-serif;
+      transition: opacity 0.3s;
+      margin-top: 8px;
+    }
+
+    .btn-submit:hover {
+      opacity: 0.9;
+    }
+
+    /* ===== التذييل ===== */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .footer h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a,
+    .footer-contact li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-contact {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(42,35,24,0.4);
+    }
+
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer-bottom .accent-line {
+      width: 32px;
+      height: 1px;
+      background: rgba(200,149,44,0.4);
+    }
+
+    /* ===== section-tag بدون center ===== */
+    .section-tag-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .section-tag-right .line {
+      width: 48px;
+      height: 1px;
+      background: rgba(200,149,44,0.4);
+    }
+
+    .section-tag-right span {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      color: var(--gold);
+    }
+
+    .section-title-right {
+      font-family: 'Amiri', serif;
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      text-wrap: balance;
+    }
+
+    .section-title-right .highlight {
+      color: var(--gold);
+    }
+
+    .section-desc-right {
+      max-width: 540px;
+      margin-top: 16px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* ===== الاستجابة للشاشات الصغيرة ===== */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-stats {
+        gap: 16px;
+      }
+
+      .history-grid,
+      .fabrics-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    /* ===== صور مؤقتة (gradient placeholders) ===== */
+    .placeholder-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1a1510 0%, #0a0a0a 50%, #1c1814 100%);
+    }
+
+    .history-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1a1510, #0f0d0a, #1c1814);
+    }
+
+    .fabrics-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #1c1814, #0f0d0a, #1a1510);
+    }
+  </style>
 </head>
+
 <body>
 
-    <nav class="p-6 border-b border-yellow-700 flex justify-between items-center bg-black">
-        <div class="text-2xl font-bold text-gold">🧵 اليرموك 2002</div>
-        <a href="https://wa.me/966XXXXXXXXX" class="bg-green-600 px-4 py-2 rounded-lg text-sm">طلب عبر الواتساب</a>
-    </nav>
-
-    <header class="text-center py-12">
-        <h1 class="text-4xl font-extrabold text-gold mb-2">مؤسسة اليرموك للخياطة</h1>
-        <p class="text-gray-400">ننسج الفخامة منذ عام 2002</p>
-    </header>
-
-    <main class="max-w-4xl mx-auto p-4">
-        <h2 class="text-xl mb-6 border-r-4 border-gold pr-3">تشكيلة الأقمشة الملكية</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="gold-border p-4 rounded-xl bg-gray-900">
-                <div class="h-40 bg-gray-800 rounded mb-4 flex items-center justify-center text-gray-500">صورة القماش (ياباني فاخر)</div>
-                <h3 class="text-gold font-bold">ياباني</h3>
-                <p class="text-sm text-gray-400 mt-2">قماش رسمي بوقفة ملكية، مناسب للمناسبات.</p>
-            </div>
-            <div class="gold-border p-4 rounded-xl bg-gray-900">
-                <div class="h-40 bg-gray-800 rounded mb-4 flex items-center justify-center text-gray-500">صورة القماش (قطن سويسري)</div>
-                <h3 class="text-gold font-bold">قطن سويسري طبيعي</h3>
-                <p class="text-sm text-gray-400 mt-2">بارد وناعم، الخيار الأول لفصل الصيف.</p>
-            </div>
+  <!-- ===== شريط التنقل ===== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <i data-lucide="scissors" style="width:20px;height:20px;"></i>
         </div>
-    </main>
+        <div class="logo-text">
+          <h1>خياط اليرموك</h1>
+          <p>SINCE 2002</p>
+        </div>
+      </a>
 
-    <footer class="text-center py-10 text-gray-600 text-sm">
-        جميع الحقوق محفوظة - اليرموك © 2026
-    </footer>
+      <ul class="nav-links">
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#history">تاريخنا</a></li>
+        <li><a href="#fabrics">الأقمشة</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+      <a href="#booking" class="btn-primary nav-cta">احجز موعدك</a>
+
+      <button class="mobile-menu-btn" aria-label="فتح القائمة">
+        <i data-lucide="menu" style="width:24px;height:24px;"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== القسم الرئيسي ===== -->
+  <section class="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <div class="line"></div>
+          <span>أناقة ملكية</span>
+        </div>
+
+        <h2>
+          حيث تلتقي <span class="highlight">الحرفة العريقة</span><br />بالأناقة المعاصرة
+        </h2>
+
+        <p class="hero-desc">
+          منذ عام 2002 ونحن نصنع لعملائنا أرقى الأزياء المفصّلة بعناية فائقة، باستخدام أجود الأقمشة العالمية وأيدي حرفيين مهرة.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#booking" class="btn-large">
+            <i data-lucide="calendar-days" style="width:20px;height:20px;"></i>
+            حجز موعد تفصيل
+          </a>
+          <a href="#fabrics" class="btn-outline">
+            <i data-lucide="palette" style="width:20px;height:20px;"></i>
+            عرض الأقمشة
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <p class="stat-num">+22</p>
+            <p class="stat-label">عاما من الخبرة</p>
+          </div>
+          <div>
+            <p class="stat-num">+15K</p>
+            <p class="stat-label">عميل راض</p>
+          </div>
+          <div>
+            <p class="stat-num">+200</p>
+            <p class="stat-label">نوع قماش</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قسم التاريخ ===== -->
+  <section class="section" id="history">
+    <div class="section-divider"></div>
+    <div class="container">
+      <div class="section-tag">
+        <div class="line"></div>
+        <span>حكايتنا</span>
+        <div class="line"></div>
+      </div>
+      <h2 class="section-title">
+        إرث من <span class="highlight">الأناقة</span> والإتقان
+      </h2>
+      <p class="section-desc">
+        منذ أكثر من عقدين ونحن نصنع قصص نجاح مع كل غرزة، محافظين على تقاليد الحرفة الأصيلة.
+      </p>
+
+      <div class="history-grid">
+        <!-- الصورة -->
+        <div class="history-image">
+          <div class="history-placeholder"></div>
+          <div class="overlay-card">
+            <p class="year">2002</p>
+            <p class="label">عام التأسيس</p>
+          </div>
+        </div>
+
+        <!-- الخط الزمني -->
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2002</p>
+            <h3 class="timeline-title">البداية</h3>
+            <p class="timeline-desc">تأسس محل خياط اليرموك برؤية واضحة: تقديم أرقى خدمات التفصيل بأيد حرفية ماهرة.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2008</p>
+            <h3 class="timeline-title">التوسع</h3>
+            <p class="timeline-desc">توسعنا لنشمل تفصيل الأثواب الرجالية والعبايات النسائية بأقمشة مستوردة من أرقى الماركات.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2015</p>
+            <h3 class="timeline-title">التميّز</h3>
+            <p class="timeline-desc">أصبحنا الوجهة الأولى في الحي لعشاق الأناقة والتفصيل الفاخر، مع قاعدة عملاء وفية.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <p class="timeline-year">2024</p>
+            <h3 class="timeline-title">المستقبل</h3>
+            <p class="timeline-desc">نواصل مسيرتنا بتبني أحدث صيحات الموضة مع الحفاظ على أصالة الحرفة وجودة التفصيل.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قسم الخدمات ===== -->
+  <section class="section" id="services">
+    <div class="section-divider"></div>
+    <div class="container">
+      <div class="section-tag">
+        <div class="line"></div>
+        <span>خدماتنا</span>
+        <div class="line"></div>
+      </div>
+      <h2 class="section-title">
+        نقدّم لكم <span class="highlight">أرقى</span> الخدمات
+      </h2>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="shirt"></i>
+          </div>
+          <h3>تفصيل الأثواب</h3>
+          <p>تفصيل أثواب رجالية بقصّات عصرية وأقمشة فاخرة تناسب جميع المناسبات.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="crown"></i>
+          </div>
+          <h3>العبايات الفاخرة</h3>
+          <p>تصميم وتفصيل عبايات نسائية راقية بأقمشة مميزة وتطريزات حصرية.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="ruler"></i>
+          </div>
+          <h3>التعديلات والإصلاح</h3>
+          <p>خدمة تعديل المقاسات وإصلاح الملابس باحترافية عالية تعيد لها رونقها.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <h3>تصاميم خاصة</h3>
+          <p>تصاميم حصرية للمناسبات الخاصة كالأعراس والمؤتمرات بلمسة ملكية فريدة.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قسم الأقمشة ===== -->
+  <section class="section" id="fabrics">
+    <div class="section-divider"></div>
+    <div class="container">
+      <div class="fabrics-grid">
+        <!-- المحتوى -->
+        <div>
+          <div class="section-tag-right">
+            <div class="line"></div>
+            <span>تشكيلتنا</span>
+          </div>
+          <h2 class="section-title-right">
+            أقمشة <span class="highlight">عالمية</span><br />بمعايير استثنائية
+          </h2>
+          <p class="section-desc-right">
+            نوفر لكم تشكيلة واسعة من أجود الأقمشة المستوردة من إيطاليا وإنجلترا واليابان، لنضمن لكم مظهرا يليق بذوقكم الرفيع.
+          </p>
+          <div class="fabric-list">
+            <div class="fabric-item">
+              <span class="name">أقمشة الأثواب</span>
+              <span class="count">85 نوع</span>
+            </div>
+            <div class="fabric-item">
+              <span class="name">الحرير والساتان</span>
+              <span class="count">42 نوع</span>
+            </div>
+            <div class="fabric-item">
+              <span class="name">الصوف الإنجليزي</span>
+              <span class="count">38 نوع</span>
+            </div>
+            <div class="fabric-item">
+              <span class="name">القطن المصري</span>
+              <span class="count">55 نوع</span>
+            </div>
+          </div>
+          <a href="#fabrics" class="btn-primary" style="margin-top:32px; padding:14px 32px; font-size:0.9rem;">استكشف الأقمشة</a>
+        </div>
+
+        <!-- الصورة -->
+        <div class="fabrics-image">
+          <div class="fabrics-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== قسم الحجز ===== -->
+  <section class="section" id="booking">
+    <div class="section-divider"></div>
+    <div class="container">
+      <div class="booking-grid">
+        <!-- المعلومات -->
+        <div>
+          <div class="section-tag-right">
+            <div class="line"></div>
+            <span>احجز الآن</span>
+          </div>
+          <h2 class="section-title-right">
+            احجز موعد <span class="highlight">تفصيلك</span>
+          </h2>
+          <p class="section-desc-right">
+            نرحب بكم في محلنا لأخذ المقاسات واختيار الأقمشة المناسبة. احجز موعدك الآن لتجربة خدمة مميزة.
+          </p>
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <p class="label">اتصل بنا</p>
+                <p class="value" dir="ltr" style="text-align:right;">+966 50 XXX XXXX</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div>
+                <p class="label">موقعنا</p>
+                <p class="value">حي اليرموك - الشارع الرئيسي</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i data-lucide="clock"></i>
+              </div>
+              <div>
+                <p class="label">أوقات العمل</p>
+                <p class="value">السبت - الخميس: 9 صباحا - 10 مساء</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- نموذج الحجز -->
+        <div class="booking-form">
+          <div class="form-header">
+            <i data-lucide="calendar-days"></i>
+            <h3>نموذج الحجز</h3>
+          </div>
+
+          <form onsubmit="event.preventDefault(); alert('تم إرسال الحجز بنجاح!');">
+            <div class="form-group">
+              <label>الاسم الكامل</label>
+              <input type="text" placeholder="أدخل اسمك الكامل" />
+            </div>
+            <div class="form-group">
+              <label>رقم الجوال</label>
+              <input type="tel" placeholder="05XXXXXXXX" dir="ltr" style="text-align:right;" />
+            </div>
+            <div class="form-group">
+              <label>نوع الخدمة</label>
+              <select>
+                <option value="">اختر الخدمة</option>
+                <option value="thobe">تفصيل ثوب</option>
+                <option value="abaya">تفصيل عباية</option>
+                <option value="suit">تفصيل بدلة</option>
+                <option value="alteration">تعديل مقاسات</option>
+                <option value="special">تصميم خاص</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>التاريخ المفضل</label>
+              <input type="date" />
+            </div>
+            <div class="form-group">
+              <label>ملاحظات إضافية</label>
+              <textarea placeholder="أي تفاصيل إضافية تود إخبارنا بها..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">تأكيد الحجز</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== التذييل ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom:16px;">
+            <div class="logo-icon">
+              <i data-lucide="scissors" style="width:20px;height:20px;"></i>
+            </div>
+            <div class="logo-text">
+              <h1>خياط اليرموك</h1>
+              <p>SINCE 2002</p>
+            </div>
+          </div>
+          <p style="max-width:280px; font-size:0.875rem; line-height:1.8; color:var(--text-muted);">
+            أناقة ملكية وحرفية عريقة في تفصيل الملابس منذ أكثر من عقدين.
+          </p>
+        </div>
+
+        <div>
+          <h4>روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#">الرئيسية</a></li>
+            <li><a href="#history">تاريخنا</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><a href="#fabrics">الأقمشة</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>تواصل معنا</h4>
+          <ul class="footer-contact">
+            <li>حي اليرموك - الشارع الرئيسي</li>
+            <li dir="ltr" style="text-align:right;">+966 50 XXX XXXX</li>
+            <li>السبت - الخميس: 9 ص - 10 م</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>جميع الحقوق محفوظة لخياط اليرموك 2024</p>
+        <div class="accent-line"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- تفعيل الأيقونات -->
+  <script>
+    lucide.createIcons();
+
+    // قائمة الموبايل
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navCta = document.querySelector('.nav-cta');
+
+    if (menuBtn) {
+      menuBtn.addEventListener('click', function() {
+        const isHidden = navLinks.style.display === 'none' || !navLinks.style.display;
+        if (window.innerWidth <= 768) {
+          navLinks.style.display = isHidden ? 'flex' : 'none';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.right = '0';
+          navLinks.style.left = '0';
+          navLinks.style.background = 'var(--bg)';
+          navLinks.style.padding = '16px 24px';
+          navLinks.style.borderBottom = '1px solid var(--border)';
+        }
+      });
+    }
+
+    // تمرير سلس
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
