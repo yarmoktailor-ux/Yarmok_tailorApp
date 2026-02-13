@@ -3,288 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خياط اليرموك - إرث الوالد 2002</title>
+    <title>خياط اليرموك - إرث 2002</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&display=swap');
-        :root { --gold: #d4af37; --dark: #050505; --navy: #011627; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--dark); color: white; scroll-behavior: smooth; }
-        .gold-text { color: var(--gold); }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(212, 175, 55, 0.1); }
-        .btn-gold { background: var(--gold); color: black; font-weight: bold; border-radius: 12px; transition: 0.3s; }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
-        .thobe-card { border-right: 4px solid var(--gold); padding: 20px; margin-bottom: 20px; background: rgba(212, 175, 55, 0.05); border-radius: 0 15px 15px 0; }
-        input, select { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(212,175,55,0.2) !important; color: white !important; }
-        .praise-alert { animation: slideDown 0.5s ease-out; background: linear-gradient(to left, transparent, rgba(212, 175, 55, 0.1), transparent); }
-        @keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        @media print { .no-print { display: none; } .print-area { display: block !important; color: black !important; background: white !important; } }
+        :root { --gold: #d4af37; --dark: #0a0a0a; }
+        body { background-color: var(--dark); font-family: 'Cairo', sans-serif; color: white; }
+        .gold-border { border: 1px solid var(--gold); }
+        .text-gold { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <div id="praise-container" class="fixed top-20 left-0 right-0 z-[100] text-center no-print px-4"></div>
-
-    <nav class="sticky top-0 z-50 glass p-4 flex justify-between items-center no-print">
-        <div class="flex gap-6">
-            <button onclick="showPage('home')" class="hover:text-gold-500 font-bold">الرئيسية</button>
-            <button onclick="showPage('tailor')" class="hover:text-gold-500 font-bold">التفصيل الذكي</button>
-            <button onclick="showPage('about')" class="hover:text-gold-500 font-bold">إرث الوالد</button>
-        </div>
-        <div class="gold-text font-bold text-xl">اليرموك 2002</div>
+    <nav class="p-6 border-b border-yellow-700 flex justify-between items-center bg-black">
+        <div class="text-2xl font-bold text-gold">🧵 اليرموك 2002</div>
+        <a href="https://wa.me/966XXXXXXXXX" class="bg-green-600 px-4 py-2 rounded-lg text-sm">طلب عبر الواتساب</a>
     </nav>
 
-    <section id="home" class="page py-10 px-6 max-w-6xl mx-auto text-center">
-        <div id="logo-header" class="mb-10">
-            <img id="store-logo" src="https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png" class="h-32 w-32 mx-auto rounded-full border-2 border-gold-500 shadow-2xl mb-4">
-            <h1 class="text-3xl font-bold gold-text">مؤسسة اليرموك للخياطة الرجالية</h1>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="product-list">
+    <header class="text-center py-12">
+        <h1 class="text-4xl font-extrabold text-gold mb-2">مؤسسة اليرموك للخياطة</h1>
+        <p class="text-gray-400">ننسج الفخامة منذ عام 2002</p>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4">
+        <h2 class="text-xl mb-6 border-r-4 border-gold pr-3">تشكيلة الأقمشة الملكية</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="gold-border p-4 rounded-xl bg-gray-900">
+                <div class="h-40 bg-gray-800 rounded mb-4 flex items-center justify-center text-gray-500">صورة القماش (ياباني فاخر)</div>
+                <h3 class="text-gold font-bold">سميراميس ياباني</h3>
+                <p class="text-sm text-gray-400 mt-2">قماش رسمي بوقفة ملكية، مناسب للمناسبات.</p>
             </div>
-
-        <div id="yaqoot-rec" class="hidden mt-12 p-6 glass rounded-2xl border-dashed border border-gold-500/50">
-            <h3 class="gold-text font-bold mb-2"><i class="fas fa-magic ml-2"></i> اقتراح ياقوت اليرموك:</h3>
-            <p id="rec-text" class="italic opacity-90"></p>
-        </div>
-    </section>
-
-    <section id="about" class="page hidden py-20 px-6 max-w-4xl mx-auto text-center">
-        <div class="glass p-10 rounded-3xl border-2 border-gold-500 shadow-2xl">
-            <h2 class="text-4xl font-bold gold-text mb-6" style="font-family: 'Amiri';">إرث الوالد يرحب بكم</h2>
-            <div class="h-1 w-40 bg-gold-500 mx-auto mb-8"></div>
-            <p class="text-xl leading-relaxed mb-6 italic">
-                "كان الوالد يقول: الثوب هيبة الرجل، فاجعلوا هيبته في دقة عملكم."
-            </p>
-            <p class="text-lg leading-relaxed opacity-80 mb-8">
-                نحن في اليرموك لا نبيع مجرد أثواب، بل نقدم إرثاً بدأ منذ عام 2002. نعتمد أعلى معايير الجودة في اختيار الأقمشة اليابانية والسويسرية، مع دقة متناهية في المقاسات بالهنش.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                <div class="p-4 bg-white/5 rounded-xl border border-gold-500/20">تأسسنا عام 2002</div>
-                <div class="p-4 bg-white/5 rounded-xl border border-gold-500/20">أكثر من 20 سنة خبرة</div>
-                <div class="p-4 bg-white/5 rounded-xl border border-gold-500/20">ضمان ذهبي على الخياطة</div>
+            <div class="gold-border p-4 rounded-xl bg-gray-900">
+                <div class="h-40 bg-gray-800 rounded mb-4 flex items-center justify-center text-gray-500">صورة القماش (قطن سويسري)</div>
+                <h3 class="text-gold font-bold">قطن سويسري طبيعي</h3>
+                <p class="text-sm text-gray-400 mt-2">بارد وناعم، الخيار الأول لفصل الصيف.</p>
             </div>
         </div>
-    </section>
+    </main>
 
-    <section id="tailor" class="page hidden py-10 px-6 max-w-5xl mx-auto">
-        
-        <div class="mb-8 glass p-6 rounded-2xl border-blue-500/30 flex flex-col md:flex-row gap-4 items-center">
-            <label class="gold-text font-bold">هل لديك مقاسات سابقة؟</label>
-            <input type="tel" id="search_phone" placeholder="أدخل رقم جوالك هنا..." class="p-2 rounded flex-1">
-            <button onclick="fetchClientData()" class="btn-gold px-6 py-2">استدعاء المقاسات 🔍</button>
-        </div>
+    <footer class="text-center py-10 text-gray-600 text-sm">
+        جميع الحقوق محفوظة - اليرموك © 2026
+    </footer>
 
-        <div class="glass p-8 rounded-3xl border border-gold-500/30 mb-10">
-            <h2 class="text-xl font-bold gold-text mb-6 flex items-center">
-                <i class="fas fa-ruler-horizontal ml-3"></i> مقاسات الجسم (هنش - موحدة لجميع الأثواب)
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div><label class="text-[10px] opacity-60 uppercase">الطول</label><input type="number" id="m_len" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">الكتف</label><input type="number" id="m_sh" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">طول اليد</label><input type="number" id="m_hand" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">وسع الصدر</label><input type="number" id="m_chest" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">الرقبة</label><input type="number" id="m_neck" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">وسط اليد</label><input type="number" id="m_mid_hand" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">طول الكبك</label><input type="number" id="m_cuff" step="0.1" class="w-full p-2 rounded"></div>
-                <div><label class="text-[10px] opacity-60">وسع الخطوة</label><input type="number" id="m_step" step="0.1" class="w-full p-2 rounded"></div>
-            </div>
-        </div>
-
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold gold-text">تفاصيل الأثواب المطلوبة</h2>
-            <button onclick="addNewThobe()" class="btn-gold px-4 py-2 text-xs">+ إضافة ثوب آخر بتفصيل مختلف</button>
-        </div>
-
-        <div id="thobes-container">
-            </div>
-
-        <div class="glass p-8 rounded-3xl mt-10">
-            <h3 class="gold-text font-bold mb-6">بيانات الاستلام والدفع</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <input type="text" id="c_name" placeholder="اسم العميل الكامل" class="p-3 rounded-lg">
-                <input type="tel" id="c_phone" placeholder="رقم الجوال لتأكيد الطلب" class="p-3 rounded-lg">
-            </div>
-            
-            <div class="p-6 bg-navy rounded-2xl border border-gold-500/20">
-                <h4 class="text-sm gold-text mb-4">💳 اخترنا لك الدفع الإلكتروني المباشر:</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div class="p-3 border border-white/10 rounded-xl">بنك الكريمي: <span class="gold-text">3005374854</span></div>
-                    <div class="p-3 border border-white/10 rounded-xl">محفظة جيب: <span class="gold-text">595720</span></div>
-                </div>
-            </div>
-
-            <button onclick="generateFinalOrder()" class="w-full btn-gold py-5 mt-10 text-xl shadow-2xl uppercase tracking-tighter">إصدار الفاتورة الملكية بالباركود 🖨️</button>
-        </div>
-    </section>
-
-    <div id="print-area" class="hidden p-10 bg-white text-black min-h-screen">
-        <div class="text-center border-b-4 border-black pb-4 mb-8">
-            <h1 class="text-4xl font-bold mb-2">اليرموك للخياطة الحديثة</h1>
-            <p class="text-xl">Al-Yarmouk Tailoring - Est 2002</p>
-            <p>صنعاء_الأصبحي | هاتف: 773463560</p>
-        </div>
-        <div class="flex justify-between mb-8 text-lg font-bold">
-            <div>العميل: <span id="p_name"></span></div>
-            <div>التاريخ: <span id="p_date"></span></div>
-        </div>
-        <div class="mb-10 p-4 border-2 border-black">
-            <h3 class="font-bold underline text-xl mb-4 text-center">المقاسات المعتمدة (بالهنش)</h3>
-            <div id="p_measures" class="grid grid-cols-4 gap-4 text-center"></div>
-        </div>
-        <div id="p_thobes">
-            <h3 class="font-bold underline text-xl mb-4 text-center">تفاصيل الأثواب والقصات</h3>
-        </div>
-        <div class="mt-12 flex flex-col items-center">
-            <div id="qrcode"></div>
-            <p class="mt-4 font-bold">يرجى مسح الباركود لتتبع حالة الثوب</p>
-            <p class="text-sm italic mt-8">نشكركم لاختياركم إرث الوالد - اليرموك للخياطة</p>
-        </div>
-    </div>
-
-    <script>
-        let thobeCount = 0;
-        let products = [
-            { id: 101, name: "قماش سميراميس ياباني", price: 450, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "fabric" },
-            { id: 102, name: "ثوب ملكي مطرز", price: 300, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "thobe" },
-            { id: 103, name: "قماش قطن سويسري", price: 800, img: "https://i.ibb.co/C3YFp0k7/688339f4-1296-48c0-bc66-3be039832675.png", type: "fabric" }
-        ];
-
-        function showPage(id) {
-            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
-            document.getElementById(id).classList.remove('hidden');
-            window.scrollTo(0,0);
-        }
-
-        function renderProducts() {
-            const list = document.getElementById('product-list');
-            list.innerHTML = products.map(p => `
-                <div class="glass rounded-3xl overflow-hidden group cursor-pointer border border-white/5 hover:border-gold-500 transition-all duration-500" onclick="selectProduct('${p.name}', '${p.type}')">
-                    <img src="${p.img}" class="w-full h-64 object-cover group-hover:scale-110 transition duration-700">
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl">${p.name}</h3>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="gold-text font-bold">${p.price} ر.س</span>
-                            <span class="text-xs opacity-50">إرث اليرموك</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function selectProduct(name, type) {
-            const praises = [
-                "ذوقك الرفيع يعكس شخصيتك المهيبة.. اختيار موفق!",
-                "هذا الاختيار يليق بمقامك، إرث الوالد يفتخر بخدمتك.",
-                "أحسنت الاختيار، هذا المنتج من الأكثر طلباً لدى نخبائنا."
-            ];
-            const pContainer = document.getElementById('praise-container');
-            pContainer.innerHTML = `<div class="praise-alert p-4 gold-text font-bold italic glass rounded-full inline-block shadow-2xl">${praises[Math.floor(Math.random() * praises.length)]}</div>`;
-            
-            const recBox = document.getElementById('yaqoot-rec');
-            recBox.classList.remove('hidden');
-            document.getElementById('rec-text').innerText = type === 'thobe' ? 
-                `بما أنك اخترت "${name}"، نقترح عليك شال كشميري وكوت جوخ لإكمال الهيبة.` :
-                `هذا القماش الرائع يتناسب جداً مع خياط "سعودي ملكي" ورقبة "قلاب فرنسي".`;
-            
-            setTimeout(() => pContainer.innerHTML = "", 5000);
-        }
-
-        function addNewThobe() {
-            thobeCount++;
-            const container = document.getElementById('thobes-container');
-            const div = document.createElement('div');
-            div.className = "thobe-card glass animate-in slide-in-from-right duration-500";
-            div.innerHTML = `
-                <div class="flex justify-between items-center mb-4">
-                    <span class="gold-bg text-black px-4 py-1 rounded-full text-xs font-bold shadow-lg">الثوب (${thobeCount})</span>
-                    <button onclick="this.parentElement.parentElement.remove()" class="text-red-500 hover:text-red-300 transition"><i class="fas fa-trash-alt"></i></button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <select class="p-2 rounded text-xs">
-                        <option>الرقبة: قلاب ملكي</option><option>قلاب فرنسي</option><option>قلاب دائري</option><option>سادة مربع</option><option>سادة دائري</option><option>صيني</option>
-                    </select>
-                    <select class="p-2 rounded text-xs">
-                        <option>الكبك: كبك قماش</option><option>كبك حشو مربع</option><option>كبك حشو دائري</option><option>سادة بدون زرار</option>
-                    </select>
-                    <select class="p-2 rounded text-xs">
-                        <option>الجبزور: كبس ظاهر</option><option>كبس مخفي</option><option>زرار مخفي</option><option>سحاب</option>
-                    </select>
-                    <select class="p-2 rounded text-xs">
-                        <option>الخياط: قطري</option><option>سعودي</option><option>عماني</option><option>كويتي</option>
-                    </select>
-                </div>
-                <input type="text" placeholder="ملاحظات إضافية لهذا الثوب (مثل القماش أو التطريز)..." class="w-full mt-4 p-2 text-xs rounded-lg italic">
-            `;
-            container.appendChild(div);
-        }
-
-        function generateFinalOrder() {
-            const name = document.getElementById('c_name').value;
-            const phone = document.getElementById('c_phone').value;
-            if(!name || !phone) return alert("يرجى إكمال بيانات الاسم والجوال");
-
-            // حفظ المقاسات في "قاعدة البيانات" المحلية للرقم
-            const clientData = {
-                name,
-                len: document.getElementById('m_len').value,
-                sh: document.getElementById('m_sh').value,
-                hand: document.getElementById('m_hand').value,
-                chest: document.getElementById('m_chest').value,
-                neck: document.getElementById('m_neck').value,
-                mid_hand: document.getElementById('m_mid_hand').value,
-                cuff: document.getElementById('m_cuff').value,
-                step: document.getElementById('m_step').value
-            };
-            localStorage.setItem('client_' + phone, JSON.stringify(clientData));
-
-            // ملء بيانات الطباعة
-            document.getElementById('p_name').innerText = name;
-            document.getElementById('p_date').innerText = new Date().toLocaleDateString('ar-SA');
-            
-            const measures = ["الطول", "الكتف", "اليد", "الصدر", "الرقبة", "وسط اليد", "الكوك", "الخطوة"];
-            const values = [clientData.len, clientData.sh, clientData.hand, clientData.chest, clientData.neck, clientData.mid_hand, clientData.cuff, clientData.step];
-            document.getElementById('p_measures').innerHTML = measures.map((m, i) => `<div class="border p-2 font-bold">${m}: ${values[i]}</div>`).join('');
-
-            let thobeHTML = "";
-            document.querySelectorAll('#thobes-container .thobe-card').forEach((card, idx) => {
-                const selects = card.querySelectorAll('select');
-                const note = card.querySelector('input').value;
-                thobeHTML += `<div class="border-2 border-black p-4 mb-4 text-sm font-bold">الثوب ${idx+1}: ${selects[0].value} - ${selects[1].value} - ${selects[2].value} - ${selects[3].value} <br> ${note ? 'ملاحظة: ' + note : ''}</div>`;
-            });
-            document.getElementById('p_thobes').innerHTML = thobeHTML;
-
-            document.getElementById('qrcode').innerHTML = "";
-            new QRCode(document.getElementById("qrcode"), { text: "YARMOUK-" + phone + "-" + Date.now(), width: 120, height: 120 });
-
-            window.print();
-        }
-
-        function fetchClientData() {
-            const phone = document.getElementById('search_phone').value;
-            const saved = JSON.parse(localStorage.getItem('client_' + phone));
-            if(saved) {
-                document.getElementById('m_len').value = saved.len;
-                document.getElementById('m_sh').value = saved.sh;
-                document.getElementById('m_hand').value = saved.hand;
-                document.getElementById('m_chest').value = saved.chest;
-                document.getElementById('m_neck').value = saved.neck;
-                document.getElementById('m_mid_hand').value = saved.mid_hand;
-                document.getElementById('m_cuff').value = saved.cuff;
-                document.getElementById('m_step').value = saved.step;
-                document.getElementById('c_name').value = saved.name;
-                document.getElementById('c_phone').value = phone;
-                alert("تم استدعاء مقاسات العميل: " + saved.name);
-            } else {
-                alert("عذراً، لا توجد مقاسات مخزنة لهذا الرقم.");
-            }
-        }
-
-        window.onload = () => {
-            renderProducts();
-            addNewThobe();
-        };
-    </script>
 </body>
 </html>
